@@ -1,0 +1,13 @@
+<p>list works!</p>
+<h1>Objects</h1>
+<ul *ngIf="obj">
+  <li *ngFor="let o of obj">
+    <p class="id">{{o.id}}</p>
+    <p class="name">{{o.name}}</p>
+    <p class="country">{{o.country}}</p>
+    <p class="city">{{o.city}}</p>
+    <p class="phone">{{o.phone}}</p>
+    <a href="{{ o.website_url }}" class="site"><b>site</b></a>
+
+  </li>
+</ul>
