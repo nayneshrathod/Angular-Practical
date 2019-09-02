@@ -7,20 +7,24 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { ContactUsComponent } from './ContactUs/ContactUs.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ListComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      HomeComponent,
+      ListComponent,
+      ContactUsComponent
+   ],
+   imports: [
+      BrowserModule,
+      FormsModule,
+      HttpClientModule,
+      AppRoutingModule
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }
