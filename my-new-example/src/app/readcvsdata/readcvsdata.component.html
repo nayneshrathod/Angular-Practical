@@ -1,10 +1,29 @@
-<div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input class="form-control" type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" />
-</div>
+<div class="container">
+    <div class="row">
+        <div class="form-group">
 
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>
+                    <marquee behavior="left" direction="alternate">Use Only CSV File To upload and check contact list </marquee>
+                </h1>
+            </div>
 
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
+            </div>
+
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label for="txtFileUpload">File input</label>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <input class="form-control-file" type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" />
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!--
 
 <div class="container">
     <div class="row">
@@ -19,7 +38,7 @@
                     <h6>Mobile: {{record.Phone}}</h6>
                     <h6>Address: {{record.address}}</h6>
                     <h6>State: {{record.state}}</h6>
-                    <h6>Mobile: {{record.Phone}}</h6>
+                    <h6>Group: {{record.Group}}</h6>
                     <h6>Country: {{record.Country}}</h6>
                     <h6>Oragnigation: {{record.Orgn}}</h6>
                 </div>
@@ -27,6 +46,50 @@
             </li>
         </ul>
     </div>
+</div>
+ -->
+
+    <div class="row">
+
+        <div *ngFor=" let record of records;let i = index;" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="card-container-imagia">
+                <div class="card-imagia">
+                    <div class="front-imagia">
+                        <div class="cover-imagia"><img src="https://unsplash.it/720/500?image=1067" alt=""></div>
+                        <div class="user-imagia"><img src="{{record.Photo}}" class="img-circle" alt=""></div>
+                        <div class="content-imagia">
+                            <h3 class="name-imagia">{{record.Name}}</h3>
+                            <p class="subtitle-imagia">{{record.Birthday}} </p>
+                            <p class="subtitle-imagia">{{record.Phone}} </p>
+                            <p class="text-center"><em>{{record.Email}}</em></p>
+                        </div>
+                        <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                    </div>
+                    <div class="back-imagia">
+                        <div class="content-imagia content-back-imagia" style="overflow: auto; word-wrap: break-word">
+                            <div>
+                                <!-- <div class="cover-imagia"><img src="https://unsplash.it/720/500?image=1067" alt=""></div> -->
+                                <div class="user-imagia"><img src="{{record.Photo}}" class="img-circle" alt=""></div>
+                                <h3 class="text-center">{{record.Name}}</h3>
+                                <h4 class="text-center">{{record.Phone}}</h4>
+                                <h4 class="text-center">{{record.Birthday}}</h4>
+                                <h5 class="text-center">{{record.Email}}</h5>
+                                <p class="text-center">
+                                    Address {{record.address}} <br> State {{record.state}} <br> Country {{record.Country}} <br> Orgnaigation: {{record.Orgn}} <br>
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="footer-imagia">
+                            <div class="social-imagia text-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
 <!--
