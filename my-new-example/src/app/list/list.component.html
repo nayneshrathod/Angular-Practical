@@ -16,7 +16,7 @@
 
 <div class="container">
     <div class="row">
-        <ul *ngIf="obj">
+        <!-- <ul *ngIf="obj">
             <li *ngFor="let o of obj">
                 <p class="id">{{o.id}}</p>
                 <p class="name">{{o.name}}</p>
@@ -25,6 +25,20 @@
                 <p class="phone">{{o.phone}}</p>
                 <a href="{{ o.website_url }}" class="site"><b>site</b></a>
 
+            </li>
+        </ul> -->
+
+        <ul *ngIf="obj" class="card">
+            <li *ngFor="let o of obj " class="card-body ">
+                <img class="card-img-top " src="../../assets/Img/pexels-photo-236047.jpeg" alt="Card image cap ">
+                <h4 class="card-title " style="padding: 5px;">{{o.id}}<br/> {{o.name}}</h4>
+                <div class="card-text " style="padding: 10px;">
+                    <h6 class="card-subtitle mb-2 text-muted">Phone: {{o.phone}}</h6>
+                    <h6>City: {{o.city}}</h6>
+                    <h5></h5>
+                    <h6>Country: {{o.country}}</h6>
+                </div>
+                <a href="{{ o.website_url }} " class="btn btn-primary ">Go somewhere</a>
             </li>
         </ul>
     </div>

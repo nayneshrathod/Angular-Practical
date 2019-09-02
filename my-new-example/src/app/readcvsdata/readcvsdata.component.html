@@ -1,0 +1,54 @@
+<div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input class="form-control" type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" />
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <ul *ngIf="records.length > 0 " class="card">
+            <li *ngFor=" let record of records;let i = index;" class="card-body ">
+                <img class="card-img-top" src='{{record.Photo}}' width="250px" height="167px" alt=" Card image cap ">
+                <h4 class="card-title " style="padding: 5px; ">
+                    {{record.Name}} </h4>
+                <div class="card-text " style="padding: 10px; ">
+                    <h6 class="card-subtitle mb-2 text-muted ">Birthdate: {{record.Birthday}}</h6>
+                    <h6>E-mail ID: {{record.Email}}</h6>
+                    <h6>Mobile: {{record.Phone}}</h6>
+                    <h6>Address: {{record.address}}</h6>
+                    <h6>State: {{record.state}}</h6>
+                    <h6>Mobile: {{record.Phone}}</h6>
+                    <h6>Country: {{record.Country}}</h6>
+                    <h6>Oragnigation: {{record.Orgn}}</h6>
+                </div>
+                <a href="{{ record.Website }} " class="btn btn-primary ">Go somewhere</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--
+<table *ngIf="records.length> 0" class="table table-bordered table-hover table-responsive">
+                <thead>
+                    <tr>
+                        <th>ID </th>
+                        <th>FirstName </th>
+                        <th>LastName </th>
+                        <th>Age </th>
+                        <th>Position </th>
+                        <th>Mobile </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let record of records;let i = index;">
+                        <td> <span>{{record.id}}</span> </td>
+                        <td> <span>{{record.firstName}}</span> </td>
+                        <td> <span>{{record.lastName}}</span> </td>
+                        <td> <span>{{record.age}}</span> </td>
+                        <td> <span>{{record.position}}</span> </td>
+                        <td> <span>{{record.mobile}}</span> </td>
+                    </tr>
+                </tbody>
+                </table> -->

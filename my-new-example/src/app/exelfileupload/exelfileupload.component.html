@@ -1,0 +1,25 @@
+<h3>Generate and Download Excel File in Angular 7</h3>
+<div class="container">
+    <button (click)="exportAsXLSX()" class="btn btn-info  ">Download Excel</button>
+    <br>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Month</th>
+                    <th>Sales</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of excel">
+                    <td>{{item.Name}}</td>
+                    <td>{{item.Month}}</td>
+                    <td>{{item.Sales_Figure}}</td>
+                    <td>{{item.Perc}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
